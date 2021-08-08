@@ -42,40 +42,42 @@ class English extends Word {
 }
  */
 
-class English {
-  final _properties = [
-    {'articles': 'the'},
-    //SubjectVerbObject
-    {'structure': 'svo'},
-  ];
-  static String plural = 's';
-
+abstract class Word {
   final String meaning;
   final DateTime date;
-  final String id;
+  String? article;
+  String? plural;
   final String type;
+  final String id;
 
-  English(
-      {required this.meaning,
-      required this.date,
-      required this.id,
-      required this.type});
+  Word(
+    this.meaning,
+    this.date,
+    this.type,
+    this.id,
+    this.article,
+    this.plural,
+  );
 }
 
-class German {
-  final String meaning;
-  final String article;
-  final String plural;
-  final DateTime date;
-  final String id;
-  final String type;
-
+class German extends Word {
   German({
-    required this.meaning,
-    required this.article,
-    required this.plural,
-    required this.date,
-    required this.id,
-    required this.type,
-  });
+    required String meaning,
+    required DateTime date,
+    required String type,
+    required String id,
+    String? article,
+    String? plural,
+  }) : super(meaning, date, type, id, article, plural);
+}
+
+class English extends Word {
+  English({
+    required String meaning,
+    required DateTime date,
+    required String type,
+    required String id,
+    String? article,
+    String? plural,
+  }) : super(meaning, date, type, id, article, plural);
 }
