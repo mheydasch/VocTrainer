@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './widgets/word_submit.dart';
 import './languages/classes.dart';
+import './widgets/question_prompt.dart';
 
 void main() {
   runApp(MyApp());
@@ -119,6 +120,7 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ),
+          QuestionPrompt('Test?'),
         ]),
       ),
     );
