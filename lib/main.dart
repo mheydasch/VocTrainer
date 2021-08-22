@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './widgets/word_submit.dart';
+//import './widgets/word_submit.dart';
 import './languages/classes.dart';
 import './widgets/question_prompt.dart';
 
@@ -81,6 +81,7 @@ class MyHomePage extends StatelessWidget {
             height: 300,
             child: SingleChildScrollView(
               child: Column(
+                //returns one card for each word in the user map
                 children: _userWords.map((wrds) {
                   return Card(
                     child: Container(
@@ -93,6 +94,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                       padding: EdgeInsets.all(10),
                       child: Column(
+                        //returns one row for each language the word has
                         children: (wrds[wrds.keys.first]!).map((lng) {
                           return Row(children: [
                             Text(
