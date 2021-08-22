@@ -11,7 +11,7 @@ class QuestionPrompt extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            questionText['qT'][0],
+            questionText.keys.first,
             style: TextStyle(
               fontWeight: FontWeight.w300,
               fontSize: 17,
@@ -19,21 +19,21 @@ class QuestionPrompt extends StatelessWidget {
             ),
           ),
           Row(
-            children: [
-              Container(
+            children: (questionText['Language?']).map<Widget>((answr) {
+              return Container(
                 child: Padding(
                   padding: EdgeInsets.all(5),
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text('test2'),
+                    child: Text(answr),
                     style: ButtonStyle(
                       elevation: MaterialStateProperty.all(1),
                     ),
                   ),
                 ),
-              ),
-            ],
-          )
+              );
+            }).toList(),
+          ),
         ],
       ),
     );
