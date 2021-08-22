@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class QuestionPrompt extends StatelessWidget {
-  final String questionText;
+  final Map questionText;
 
-  QuestionPrompt(this.questionText);
+  QuestionPrompt({required this.questionText});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class QuestionPrompt extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            questionText,
+            questionText['qT'][0],
             style: TextStyle(
               fontWeight: FontWeight.w300,
               fontSize: 17,
@@ -26,18 +26,6 @@ class QuestionPrompt extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {},
                     child: Text('test2'),
-                    style: ButtonStyle(
-                      elevation: MaterialStateProperty.all(1),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text('test3'),
                     style: ButtonStyle(
                       elevation: MaterialStateProperty.all(1),
                     ),

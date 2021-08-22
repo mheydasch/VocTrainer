@@ -122,7 +122,10 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ),
-          QuestionPrompt('Test?'),
+          QuestionPrompt(questionText: {
+            'qT': ['Language?'],
+            'qA': ['German', 'English']
+          }),
         ]),
       ),
     );
