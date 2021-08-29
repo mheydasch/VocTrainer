@@ -71,7 +71,8 @@ class MyHomePage extends StatelessWidget {
   ];
 
   var _questionList = {
-    'Language?': ['German', 'English']
+    'Language?': ['German', 'English'],
+    'Meaning?': []
   };
 
   @override
