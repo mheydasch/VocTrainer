@@ -29,9 +29,14 @@ class _QuestionPromptState extends State<QuestionPrompt> {
   Widget getWidget() {
     if (_questionIndex == 0) {
       return LanguageButton(
-        questionText: widget.questionText,
-        questionIndex: _questionIndex,
-      );
+          questionText: widget.questionText,
+          Index: _questionIndex,
+          selectHandler: answerLanguage);
+    } else if (_questionIndex == 1) {
+      return LanguageButton(
+          questionText: widget.questionText,
+          Index: _questionIndex,
+          selectHandler: answerLanguage);
     } else
       //Escape statement in case of error
       return ElevatedButton(
@@ -45,37 +50,6 @@ class _QuestionPromptState extends State<QuestionPrompt> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        children: [
-          Text(
-            widget.questionText.keys.elementAt(_questionIndex),
-            style: TextStyle(
-              fontWeight: FontWeight.w300,
-              fontSize: 17,
-              color: Colors.amber.shade900,
-            ),
-          ),
-          Row(
-            children: (widget.questionText[
-                    widget.questionText.keys.elementAt(_questionIndex)])
-                .map<Widget>((answr) {
-              return Container(
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: ElevatedButton(
-                    onPressed: () => answerLanguage(answr),
-                    child: Text(answr),
-                    style: ButtonStyle(
-                      elevation: MaterialStateProperty.all(1),
-                    ),
-                  ),
-                ),
-              );
-            }).toList(),
-          ),
-        ],
-      ),
-    );
+    return getWidget();
   }
 }
