@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Buttons/language_button.dart';
+import '../Buttons/word_add_button.dart';
 
 class QuestionPrompt extends StatefulWidget {
   final Map questionText;
@@ -24,8 +25,8 @@ class _QuestionPromptState extends State<QuestionPrompt> {
     print(answr);
     print(_questionIndex);
   }
-  //conditionally getting the button for rendering
 
+  //cnditionally getting the button for rendering
   Widget getWidget() {
     if (_questionIndex == 0) {
       return LanguageButton(
@@ -33,7 +34,7 @@ class _QuestionPromptState extends State<QuestionPrompt> {
           Index: _questionIndex,
           selectHandler: answerLanguage);
     } else if (_questionIndex == 1) {
-      return LanguageButton(
+      return WordAddButton(
           questionText: widget.questionText,
           Index: _questionIndex,
           selectHandler: answerLanguage);

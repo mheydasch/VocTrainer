@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class LanguageButton extends StatelessWidget {
+class WordAddButton extends StatelessWidget {
   final Map questionText;
   final int Index;
   final Function selectHandler;
 
-  LanguageButton(
+  WordAddButton(
       {required this.questionText,
       required this.Index,
       required this.selectHandler});
@@ -31,23 +31,13 @@ class LanguageButton extends StatelessWidget {
                 color: Colors.amber.shade900,
               ),
             ),
-            Row(
-              //iterating through each element of the input map to generate one button for each answer possibility
-              children: (questionText[questionText.keys.elementAt(Index)])
-                  .map<Widget>((answr) {
-                return Container(
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                    child: ElevatedButton(
-                      onPressed: () => selectHandler(answr),
-                      child: Text(answr),
-                      style: ButtonStyle(
-                        elevation: MaterialStateProperty.all(1),
-                      ),
-                    ),
-                  ),
-                );
-              }).toList(),
+            Column(
+              children: [
+                Text('English'),
+                TextField(),
+                Text('German'),
+                TextField()
+              ],
             ),
           ],
         ),
