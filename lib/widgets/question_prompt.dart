@@ -28,7 +28,10 @@ class _QuestionPromptState extends State<QuestionPrompt> {
 
   Widget getWidget() {
     if (_questionIndex == 0) {
-      return LanguageButton(questionText: widget.questionText);
+      return LanguageButton(
+        questionText: widget.questionText,
+        questionIndex: _questionIndex,
+      );
     } else
       //Escape statement in case of error
       return ElevatedButton(
